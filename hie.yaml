@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "freet:lib"
+
+    - path: "./app/Main.hs"
+      component: "freet:exe:freet-exe"
+
+    - path: "./app/Paths_freet.hs"
+      component: "freet:exe:freet-exe"
+
+    - path: "./test"
+      component: "freet:test:freet-test"

@@ -1,0 +1,112 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: eb8b6854dde6d7c952d89daf74d5f8889b6561d088dc16ae9d5ac4021ec1bdd2
+
+name:           freet
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/quasarbright/freet#readme>
+homepage:       https://github.com/quasarbright/freet#readme
+bug-reports:    https://github.com/quasarbright/freet/issues
+author:         Mike Delmonaco
+maintainer:     mdelmonacochs@gmail.com
+copyright:      Mike Delmonaco
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/quasarbright/freet
+
+library
+  exposed-modules:
+      Except
+      Free
+      Lib
+      Pipes
+      Reader
+      RWST
+      State
+      Writer
+  other-modules:
+      Paths_freet
+  hs-source-dirs:
+      src
+  default-extensions:
+      LambdaCase
+      RecordWildCards
+      GeneralizedNewtypeDeriving
+      TupleSections
+      MonadComprehensions
+      MultiWayIf
+  ghc-options: -w -Wall
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , extra
+    , lens
+    , megaparsec
+    , mtl
+    , transformers
+  default-language: Haskell2010
+
+executable freet-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_freet
+  hs-source-dirs:
+      app
+  default-extensions:
+      LambdaCase
+      RecordWildCards
+      GeneralizedNewtypeDeriving
+      TupleSections
+      MonadComprehensions
+      MultiWayIf
+  ghc-options: -w -Wall -threaded -rtsopts -with-rtsopts=-N -w -Wall
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , extra
+    , freet
+    , lens
+    , megaparsec
+    , mtl
+    , transformers
+  default-language: Haskell2010
+
+test-suite freet-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_freet
+  hs-source-dirs:
+      test
+  default-extensions:
+      LambdaCase
+      RecordWildCards
+      GeneralizedNewtypeDeriving
+      TupleSections
+      MonadComprehensions
+      MultiWayIf
+  ghc-options: -w -Wall -threaded -rtsopts -with-rtsopts=-N -w -Wall
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , freet
+    , hspec
+    , lens
+    , megaparsec
+    , mtl
+    , transformers
+  default-language: Haskell2010
